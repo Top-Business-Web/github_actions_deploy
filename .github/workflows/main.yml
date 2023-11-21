@@ -22,7 +22,7 @@ jobs:
 
     - name: 🛠 Install Dependencies
       run: |
-        composer install --no-interaction --prefer-dist --optimize-autoloader
+        composer install --no-interaction --prefer-dist --optimize-autoloader --ignore-platform-reqs
 
     - name: ⚙️ Set Laravel Environment
       run: cp .env.example .env
