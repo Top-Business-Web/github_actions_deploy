@@ -1,5 +1,5 @@
 on:
-  pull_request:
+  push:
     branches:
       - master
 
@@ -16,6 +16,19 @@ jobs:
 
     - name: ⚙️ Set Laravel Environment
       run: cp .env.example .env
+
+    - name: 📦 Cache Composer dependencies
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.composer/cache
+          vendor
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-composer-
+
+    - name: 🚀 Install or update Composer dependencies
+      run: composer install --prefer-dist --no-interaction --optimize-autoloader
 
     - name: 🚀 Deploy Laravel Project
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
