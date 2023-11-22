@@ -7,7 +7,7 @@ name: 🚀 Deploy Laravel Project on push
 
 jobs:
   laravel-deploy:
-    name: 🎉 Deploy Laravel Project
+    name: 🎉 Deploy Laravel
     runs-on: ubuntu-latest
 
     steps:
