@@ -17,9 +17,6 @@ jobs:
     - name: ⚙️ Set Laravel Environment
       run: cp .env.example .env
 
-    - name: 🌐 Optimize Laravel
-      run: php artisan optimize
-
     - name: 🚀 Deploy Laravel Project
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
