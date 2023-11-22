@@ -13,21 +13,7 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2.3.2
-
-    - name: 📂 Cache Composer dependencies
-      uses: actions/cache@v2
-      with:
-        path: |
-          ~/.composer/cache
-          vendor
-        key: composer-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          composer-
-
-    - name: 🛠 Install Dependencies
-      run: |
-        composer install --no-interaction --prefer-dist --optimize-autoloader --ignore-platform-reqs
-
+      
     - name: ⚙️ Set Laravel Environment
       run: cp .env.example .env
 
