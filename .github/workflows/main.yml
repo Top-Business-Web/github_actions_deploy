@@ -16,7 +16,7 @@ jobs:
 
     - name: Check and Set Ownership
       run: |
-        sudo chown -R runner:runner /home/runner/work/github_actions_deploy/github_actions_deploy/storage/logsdo chmod -R 775 /home/runner/work/github_actions_deploy/github_actions_deploy/storage/logs
+        sudo chown -R runner:runner /home/runner/work/github_actions_deploy/github_actions_deploy/storage/logs chmod -R 775 /home/runner/work/github_actions_deploy/github_actions_deploy/storage/logs
 
     - name: ⚙️ Set Laravel Environment
       run: cp .env.example .env
