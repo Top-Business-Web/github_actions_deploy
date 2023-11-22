@@ -17,9 +17,6 @@ jobs:
     - name: ⚙️ Set Laravel Environment
       run: cp .env.example .env
 
-    - name: 🔐 Generate Laravel Application Key
-      run: php artisan key:generate
-
     - name: 🌐 Optimize Laravel
       run: php artisan optimize
 
