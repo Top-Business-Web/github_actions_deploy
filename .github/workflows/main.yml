@@ -14,10 +14,9 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2.3.2
 
-    - name: 🏗️ Set Permissions
+    - name: Check and Set Ownership
       run: |
-        sudo mkdir -p /home/runner/work/github_actions_deploy/github_actions_deploy/storage/logs
-        sudo chmod -R 775 /home/runner/work/github_actions_deploy/github_actions_deploy/storage/logs
+        sudo chown -R runner:runner /home/runner/work/github_actions_deploy/github_actions_deploy/storage/logsdo chmod -R 775 /home/runner/work/github_actions_deploy/github_actions_deploy/storage/logs
 
     - name: ⚙️ Set Laravel Environment
       run: cp .env.example .env
