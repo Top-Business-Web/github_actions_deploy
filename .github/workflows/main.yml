@@ -17,6 +17,13 @@ jobs:
     - name: ⚙️ Set Laravel Environment
       run: cp .env.example .env
 
+    - name: 🚀 Install Composer Dependencies
+      run: composer install --no-interaction --prefer-dist --optimize-autoloader --no-scripts --prefer-source
+      env:
+        COMPOSER_CACHE_DIR: ${{ runner.workspace }}/vendor
+        COMPOSER_MIRROR_PATH_REPOS: 1
+
+
     - name: 📦 Cache Composer dependencies
       uses: actions/cache@v2
       with:
